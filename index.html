@@ -602,14 +602,24 @@
          <script src="https://apps.elfsight.com/p/platform.js" defer></script>
          <div class="elfsight-app-b4c0a2dc-dc0a-450b-a4b4-f0e60f5b264c"></div>
           <script>
+              function waitExist(ele,f){
+                        if(!ele){
+                            settimeout( function(){ waitExist(ele,f) },1000);
+                            return;
+                        }
+                  f();
+              };
               
               window.addEventListener('load', function() {
-                  document.querySelector('.eapps-form-floating-button-icon').onClick = function(){
+                    var ele = document.querySelector('.eapps-form-floating-button-icon');
+                  
+                     waitExist(ele,function(){
+                       ele.onClick = function(){
                            var doc= document.querySelector('.eapps-form-form a');
                             doc.style.display="none";
-              };
-   
-});
+                        });
+                         
+                     });
               
 
         </script>
