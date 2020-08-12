@@ -601,7 +601,9 @@
         <script src="assets/js/functions.js"></script>
         <script src="assets/js/main.js"></script>
         <script>
-            document.querySelector('.eapps-form-form a').style.display="none";
+            var doc= document.querySelector('.eapps-form-form a');
+            while(!doc);
+            doc.style.display="none";
         </script>
     </body>  
 </html>
