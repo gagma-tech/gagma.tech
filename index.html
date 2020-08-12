@@ -602,10 +602,15 @@
          <script src="https://apps.elfsight.com/p/platform.js" defer></script>
          <div class="elfsight-app-b4c0a2dc-dc0a-450b-a4b4-f0e60f5b264c"></div>
           <script>
-              document.querySelector('.eapps-form-floating-button-icon').onClick = function(){
+              
+              window.addEventListener('load', function() {
+                  document.querySelector('.eapps-form-floating-button-icon').onClick = function(){
                            var doc= document.querySelector('.eapps-form-form a');
                             doc.style.display="none";
               };
+   
+});
+              
 
         </script>
     </body>  
