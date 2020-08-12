@@ -47,5 +47,4 @@ node_modules/
 .editorconfig
 
 ### Custom Files ###
-dist/
 accessibility-reports/
