@@ -604,7 +604,7 @@
           <script>
               function waitExist(ele,f){
                         if(!ele){
-                            settimeout( function(){ waitExist(ele,f) },1000);
+                            setTimeout( function(){ waitExist(ele,f) },1000);
                             return;
                         }
                   f();
