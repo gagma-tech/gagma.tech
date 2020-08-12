@@ -601,20 +601,15 @@
         <script src="assets/js/main.js"></script>
          <script src="https://apps.elfsight.com/p/platform.js" defer></script>
          <div class="elfsight-app-b4c0a2dc-dc0a-450b-a4b4-f0e60f5b264c"></div>
-          <script>
-              var ele = document.querySelector('.eapps-form-form a');
-              function waitExist(e,f){
-                        if(!e){
-                            setTimeout( function(){ waitExist(e,f) },1000);
-                            return;
-                        }
-                  f();
-              }
-               waitExist(ele,function(){
+       
+    </body>  
+       <script>
+              setTimeout( function(){ 
+                   var ele = document.querySelector('.eapps-form-form a');
                     ele.style.display="none";
-      
-               }); 
+                  
+            
+              },10000);
 
         </script>
-    </body>  
 </html>
