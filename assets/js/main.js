@@ -11,4 +11,6 @@ $(document).ready(function () {
   initBackToTop();
   initBackgroundImages();
   initScrollToHash();
+  showContact("#contact_us");
+  showContact("#contact_us_p");
 });
