@@ -7,14 +7,14 @@
     >
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="/">
+          <router-link class="navbar-item" to="/">
             <img
               src="assets/img/logos/gagma-logo.png"
               alt=""
               width="112"
               height="36"
             />
-          </a>
+          </router-link>
           <a
             role="button"
             class="navbar-burger"
@@ -35,6 +35,7 @@
             </a>
             <router-link
               to="/about"
+              @click.native="removeMenu()"
               class="navbar-item is-secondary modal-trigger"
               data-modal="auth-modal"
             >
@@ -51,7 +52,6 @@
         </div>
       </div>
     </nav>
-
     <nav
       id="navbar-clone"
       class="navbar is-fresh is-transparent"
@@ -89,6 +89,7 @@
             </a>
             <router-link
               to="/about"
+              @click.native="removeMenu()"
               class="navbar-item is-secondary modal-trigger"
               data-modal="auth-modal"
             >
@@ -109,8 +110,18 @@
 </template>
 
 <script>
+let $ = window.$;
 export default {
   name: "Header",
+
+  methods: {
+    removeMenu() {
+      var menu_id = $(".navbar-burger").attr("data-target");
+      $(".navbar-burger").toggleClass("is-active");
+      $("#" + menu_id).toggleClass("is-active");
+      $(".navbar.is-light").toggleClass("is-dark-mobile");
+    },
+  },
 };
 </script>
 
