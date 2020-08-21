@@ -415,12 +415,17 @@
         </div>
       </div>
     </section>
+    <Contact />
   </div>
 </template>
 
 <script>
+import Contact from "../components/Contact";
 export default {
   name: "Main",
+  components: {
+    Contact,
+  },
 };
 </script>
 
