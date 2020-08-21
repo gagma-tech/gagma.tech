@@ -74,6 +74,7 @@
                   <button
                     @click="sendForm()"
                     class="button cta is-large primary-btn form-button raised is-clear"
+                    :class="{ 'is-loading': formData.isLoading }"
                   >
                     Send Message
                   </button>
@@ -94,13 +95,14 @@ export default {
   data: () => ({
     formData: {
       model: {
-        firstName: "",
-        lastName: "",
-        email: "",
-        content: "",
+        firstName: null,
+        lastName: null,
+        email: null,
+        content: null,
       },
       errors: {},
-      success: "",
+      success: null,
+      isLoading: false,
     },
   }),
   methods: {
@@ -135,6 +137,7 @@ export default {
     },
     sendForm() {
       if (this.validate()) {
+        this.formData.isLoading = true;
         const query = `entry.1406401266=${this.formData.model.firstName}&entry.461409218=${this.formData.model.lastName}&entry.1765786323=${this.formData.model.email}&entry.803664105=${this.formData.model.content}&submit=submit`;
         $.ajax({
           url: `https://docs.google.com/forms/u/0/d/e/1FAIpQLScw2EoDm-gOH7gvhIqP0wSjh8mUyknakEMbUW2zZmg6PaknEg/formResponse?${query}`,
@@ -143,12 +146,15 @@ export default {
             //the status code from the POST request
             0: () => {
               this.formData.success = "ok";
+              this.formData.isLoading = false;
             },
             200: () => {
               this.formData.success = "ok";
+              this.formData.isLoading = false;
             },
             403: () => {
               this.formData.success = "ko";
+              this.formData.isLoading = false;
             },
           },
         });
