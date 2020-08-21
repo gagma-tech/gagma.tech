@@ -1,20 +1,24 @@
 "use strict";
 
 function initPreloader() {
-  $(window).on("load", function () {
+  $(window).on("load", function() {
     // makes sure the whole site is loaded
     $("#status").fadeOut(); // will first fade out the loading animation
 
-    $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+    $("#preloader")
+      .delay(350)
+      .fadeOut("slow"); // will fade out the white DIV that covers the website.
 
-    $("body").delay(350).css({
-      overflow: "visible",
-    });
+    $("body")
+      .delay(350)
+      .css({
+        overflow: "visible",
+      });
   });
 }
 
 function initNavbar() {
-  $(window).scroll(function () {
+  $(window).scroll(function() {
     // this will work when your window scrolled.
     var height = $(window).scrollTop(); //getting the scrolling height of window
 
@@ -27,7 +31,7 @@ function initNavbar() {
 }
 
 function initMobileMenu() {
-  $(".navbar-burger").on("click", function () {
+  $(".navbar-burger").on("click", function() {
     var menu_id = $(this).attr("data-target");
     $(this).toggleClass("is-active");
     $("#" + menu_id).toggleClass("is-active");
@@ -37,28 +41,38 @@ function initMobileMenu() {
 
 function initSidebar() {
   //Animate left hamburger icon and open sidebar
-  $(".menu-icon-trigger").click(function (e) {
+  $(".menu-icon-trigger").click(function(e) {
     e.preventDefault();
     $(".menu-icon-wrapper").toggleClass("open");
     $(".sidebar").toggleClass("is-active");
   }); //Close sidebar
 
-  $(".sidebar-close").click(function () {
+  $(".sidebar-close").click(function() {
     $(".sidebar").removeClass("is-active");
     $(".menu-icon-wrapper").removeClass("open");
   }); //Sidebar menu
 
   if ($(".sidebar").length) {
-    $(".sidebar-menu > li.have-children > a").on("click", function (i) {
+    $(".sidebar-menu > li.have-children > a").on("click", function(i) {
       i.preventDefault();
 
-      if (!$(this).parent().hasClass("active")) {
+      if (
+        !$(this)
+          .parent()
+          .hasClass("active")
+      ) {
         $(".sidebar-menu li ul").slideUp();
-        $(this).next().slideToggle();
+        $(this)
+          .next()
+          .slideToggle();
         $(".sidebar-menu li").removeClass("active");
-        $(this).parent().addClass("active");
+        $(this)
+          .parent()
+          .addClass("active");
       } else {
-        $(this).next().slideToggle();
+        $(this)
+          .next()
+          .slideToggle();
         $(".sidebar-menu li").removeClass("active");
       }
     });
@@ -66,26 +80,28 @@ function initSidebar() {
 }
 
 function initModals() {
-  $(".modal-trigger").on("click", function () {
+  $(".modal-trigger").on("click", function() {
     var modalID = $(this).attr("data-modal");
     $("#" + modalID).addClass("is-active");
   });
-  $(".modal-close, .close-modal").on("click", function () {
-    $(this).closest(".modal").removeClass("is-active");
+  $(".modal-close, .close-modal").on("click", function() {
+    $(this)
+      .closest(".modal")
+      .removeClass("is-active");
   });
 }
 
 function initBackToTop() {
   var pxShow = 600;
   var scrollSpeed = 500;
-  $(window).scroll(function () {
+  $(window).scroll(function() {
     if ($(window).scrollTop() >= pxShow) {
       $("#backtotop").addClass("visible");
     } else {
       $("#backtotop").removeClass("visible");
     }
   });
-  $("#backtotop a").on("click", function () {
+  $("#backtotop a").on("click", function() {
     $("html, body").animate(
       {
         scrollTop: 0,
@@ -98,7 +114,7 @@ function initBackToTop() {
 
 function initBackgroundImages() {
   if ($(".has-background-image").length) {
-    $(".has-background-image").each(function () {
+    $(".has-background-image").each(function() {
       var bgImage = $(this).attr("data-background");
       var attrColor = $(this).attr("data-color");
       var attrOpacity = $(this).attr("data-color-opacity");
@@ -198,7 +214,7 @@ function initScrollToHash() {
   $('a[href*="#"]') // Remove links that don't actually link to anything
     .not('[href="#"]')
     .not('[href="#0"]')
-    .click(function (event) {
+    .click(function(event) {
       // On-page links
       if (
         location.pathname.replace(/^\//, "") ==
@@ -219,7 +235,7 @@ function initScrollToHash() {
               scrollTop: target.offset().top,
             },
             550,
-            function () {
+            function() {
               // Callback after animation
               // Must change focus!
               var $target = $(target);
@@ -238,12 +254,4 @@ function initScrollToHash() {
         }
       }
     });
-}
-
-function showContact(ele) {
-  document.querySelectorAll(ele).forEach(function (e) {
-    $(e).on("click", function () {
-      $(".eapps-form-floating-button").click();
-    });
-  });
 }

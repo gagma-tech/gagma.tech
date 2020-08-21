@@ -41,10 +41,8 @@
             >
               About Us
             </router-link>
-            <a class="navbar-item" name="contact">
-              <span
-                class="button signup-button rounded secondary-btn raised showConatct"
-              >
+            <a class="navbar-item" href="#c">
+              <span class="button signup-button rounded secondary-btn raised">
                 Contact Us
               </span>
             </a>
@@ -95,7 +93,7 @@
             >
               About Us
             </router-link>
-            <a class="navbar-item" name="contact">
+            <a class="navbar-item" href="#c">
               <span
                 class="button signup-button rounded secondary-btn raised showConatct"
               >

@@ -11,8 +11,8 @@
               <h2 class="subtitle is-5 is-muted">
                 We build the fastest and most secure websites and applications.
               </h2>
-              <div class="button-wrap " name="contact">
-                <a class="button cta is-rounded primary-btn raised showConatct">
+              <div class="button-wrap ">
+                <a class="button cta is-rounded primary-btn raised " href="#c">
                   Get Started
                 </a>
               </div>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="card-action">
                   <a
-                    href="#"
+                    href="#c"
                     class="button btn-align-md primary-btn raised showConatct"
                     >Get Started</a
                   >
@@ -126,7 +126,7 @@
                 </div>
                 <div class="card-action">
                   <a
-                    href="#"
+                    href="#c"
                     class="button btn-align-md primary-btn raised showConatct"
                     >Get Started</a
                   >
@@ -150,9 +150,7 @@
                   </p>
                 </div>
                 <div class="card-action">
-                  <a
-                    href="#"
-                    class="button btn-align-md primary-btn raised showConatct"
+                  <a href="#" class="button btn-align-md primary-btn raised"
                     >Get Started</a
                   >
                 </div>

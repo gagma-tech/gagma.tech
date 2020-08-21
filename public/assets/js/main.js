@@ -1,7 +1,7 @@
 "use strict";
 
 initPreloader();
-$(document).ready(function () {
+$(document).ready(function() {
   feather.replace();
   initNavbar();
   initMobileMenu();
@@ -11,5 +11,4 @@ $(document).ready(function () {
   initBackToTop();
   initBackgroundImages();
   initScrollToHash();
-  showContact(".showConatct");
 });

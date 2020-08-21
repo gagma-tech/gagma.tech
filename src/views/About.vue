@@ -49,7 +49,7 @@
                 </div>
                 <div class="card-action">
                   <a
-                    href="#"
+                    href="#c"
                     class="button btn-align-md primary-btn raised showConatct"
                     >Get Started</a
                   >
@@ -74,7 +74,7 @@
                 </div>
                 <div class="card-action">
                   <a
-                    href="#"
+                    href="#c"
                     class="button btn-align-md primary-btn raised showConatct"
                     >Get Started</a
                   >
@@ -99,7 +99,7 @@
                 </div>
                 <div class="card-action">
                   <a
-                    href="#"
+                    href="#c"
                     class="button btn-align-md primary-btn raised showConatct"
                     >Get Started</a
                   >
@@ -151,11 +151,16 @@
         </div>
       </div>
     </section>
+    <Contact />
   </div>
 </template>
 <script>
+import Contact from "../components/Contact";
 export default {
   name: "About",
+  components: {
+    Contact,
+  },
 };
 </script>
 <style scoped>
