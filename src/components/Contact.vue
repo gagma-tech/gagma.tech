@@ -146,10 +146,13 @@ export default {
             //the status code from the POST request
             0: () => {
               this.formData.success = "ok";
+              this.clearModel();
               this.formData.isLoading = false;
             },
             200: () => {
               this.formData.success = "ok";
+
+              this.clearModel();
               this.formData.isLoading = false;
             },
             403: () => {
@@ -159,6 +162,14 @@ export default {
           },
         });
       }
+    },
+    clearModel() {
+      this.formData.model = {
+        firstName: null,
+        lastName: null,
+        email: null,
+        content: null,
+      };
     },
   },
 };
