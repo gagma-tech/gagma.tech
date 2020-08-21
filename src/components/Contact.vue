@@ -16,13 +16,13 @@
                   v-if="formData.success == 'ok'"
                   class="notification is-primary"
                 >
-                  successefull send our team wil reply shortly
+                  Sent successfully.. Our team will reply shortly!
                 </div>
                 <div
                   v-if="formData.success == 'ko'"
                   class="notification is-danger"
                 >
-                  Something Wrong !! check record and try again
+                  Something Wrong.. Check record and try again !
                 </div>
               </div>
               <div class="column is-6">
