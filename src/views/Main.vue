@@ -349,7 +349,7 @@
         </div>
       </div>
     </section>
-
+<!--
     <section
       class="section is-medium  has-background-image"
       data-background="https://source.unsplash.com/g30P1zcOzXo/1600x900"
@@ -413,6 +413,7 @@
         </div>
       </div>
     </section>
+    -->
     <Contact />
   </div>
 </template>
