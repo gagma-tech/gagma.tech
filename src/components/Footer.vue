@@ -16,7 +16,7 @@
               <li><a href="tel:0675515906"> +212 675-515906</a></li>
               <li>
                 <a href="mailto:contact@gagma.tech" target="_blank">
-                  contact@gagma.tech</a
+                  contact@gagma.agency</a
                 >
               </li>
             </ul>
